@@ -24,12 +24,13 @@ function play(playerAnswer, computerAnswer)
 {
     if(playerAnswer === computerAnswer)
     {
+        
        
         return "tie";
     }
     else if ( playerAnswer === "rock" && computerAnswer === "scissors" )
     {
-        
+       
         return true;
         
         
@@ -42,7 +43,7 @@ function play(playerAnswer, computerAnswer)
     } 
     else if ( playerAnswer === "scissors" && computerAnswer ==="paper")
     {
-        
+       
         return true;
         
         
@@ -54,7 +55,7 @@ function play(playerAnswer, computerAnswer)
     }
     else if ( computerAnswer === "paper" && playerAnswer === "rock")
     {
-        
+       
         return false;
     }
     else if ( computerAnswer === "scissors" && playerAnswer === "paper")
@@ -81,21 +82,41 @@ function game ()
     
         if (play(playerAnswer, computerAnswer) === "tie")
         {
+        
+        alert("Tie!");
+        console.log("It'sa tie!");
         tie ++;
         }
         else if (play(playerAnswer, computerAnswer) === true)
         {
+            alert("You win!");
+            console.log("You won!");
             wins ++;
+            
+
         }
         else
-        {
-        loses++;
+        {   alert("You lose!"); 
+            console.log("You lost!");
+            loses++;
         }
     }
 
-    console.log("wins" + wins);
-    console.log("Loses"+loses);
-    console.log("tie" + tie);
+    console.log("Wins:" + wins);
+    console.log("Loses:"+loses);
+    console.log("Tie:" + tie);
+    if(wins > loses && wins > tie)
+    {
+        alert("You win!");
+    }
+    else if (loses > wins && loses > tie)
+    {
+        alert("You lose!");
+    }
+    else if ( tie > wins && tie > loses)
+    {
+        alert("It's a tie!");
+    }
 
 }
 
